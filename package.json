@@ -1,0 +1,25 @@
+{
+  "name": "Breakout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kash.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amahlw/Breakout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amahlw/Breakout/issues"
+  },
+  "homepage": "https://github.com/amahlw/Breakout#readme",
+  "devDependencies": {
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
