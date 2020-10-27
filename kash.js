@@ -26,33 +26,28 @@ let lives = 3;
 const bricks = [];
 for (let c = 0; c < brickColumnCount; c += 1) {
     bricks[c] = [];
-    or(let r = 0; r < brickRowCount; r += 1) {
+    for (let r = 0; r < brickRowCount; r += 1) {
         bricks[c][r] = {
             x: 0,
             y: 0,
-            //   status: 
+            //   status:
             //     };
-        }
+        };
     }
 }
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
-
-function mouseMoveHandler(e) {
-    var relativeX = e.clientX - canvas.offsetLeft;
-    if (relativeX > 0 && relativeX < canvas.width) {
-        paddleX = relativeX - paddleWidth / 2;
-    }
-}
-
 
 function keyDownHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
     } else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
+    }
+}
+
+function mouseMoveHandler(e) {
+    var relativeX = e.clientX - canvas.offsetLeft;
+    if (relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth / 2;
     }
 }
 
@@ -63,6 +58,15 @@ function keyUpHandler(e) {
         leftPressed = false;
     }
 }
+
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
+document.addEventListener('mousemove', mouseMoveHandler, false);
+
+
+
+
+
 
 function collisionDetection() {
     for (var c = 0; c < brickColumnCount; c++) {
