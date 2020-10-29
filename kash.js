@@ -110,6 +110,8 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
+// ------------------
+// Const bricks =[[{},{x:0,y:0,status:1},{}],[],[],[],[]]
 
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c += 1) {
