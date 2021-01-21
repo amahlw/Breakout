@@ -155,7 +155,7 @@ function draw() {
         alert('GAME OVER');
         document.location.reload();
       } else {
-        x = canvas.width / 2;
+        x = canvas.width / 4;
         y = canvas.height - 30;
         dx = 3;
         dy = -3;
