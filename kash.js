@@ -102,6 +102,7 @@ function drawBall() {
   ctx.fill();
   ctx.closePath();
 }
+// paddle drawing
 
 function drawPaddle() {
   ctx.beginPath();
@@ -176,3 +177,4 @@ function draw() {
 }
 
 draw();
+
