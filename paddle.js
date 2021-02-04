@@ -5,6 +5,7 @@ class Paddle {
         this.height = 10;
         this.x = (canvas.width - this.width) / 2;
     }
+
     drawPaddle(canvas, ctx, rightPressed, leftPressed) {
         if (rightPressed && this.x < canvas.width - this.width) {
             this.x -= 7;
@@ -18,12 +19,12 @@ class Paddle {
         ctx.closePath();
     }
 }
-//// CONSTANTS
+/// / CONSTANTS
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
-//// INITIALIZATIONS
+/// / INITIALIZATIONS
 const ball1 = new Ball();
-// BRICK VALUES 
+// BRICK VALUES
 const brickRowCount = 5;
 const brickColumnCount = 3;
 const brickWidth = 75;
@@ -41,16 +42,16 @@ for (let c = 0; c < brickColumnCount; c++) {
         bricks[c][r] = new Brick(brickX, brickY, 1);
     }
 }
-const paddle = new Paddle(canvas)
+const paddle = new Paddle(canvas);
 /// / EVENT HANDLERS AND EVENT LISTENERS
-let rightPressed = false
-let leftPressed = false
+let rightPressed = false;
+let leftPressed = false;
 document.addEventListener('keydown', keyDownHandler, false);
 document.addEventListener('keyup', keyUpHandler, false);
 function keyDownHandler(e) {
-    if (e.key == 'Right' || e.key == 'ArrowRight') {
+    if (e.key === 'Right' || e.key == 'ArrowRight') {
         rightPressed = true;
-    } else if (e.key == 'Left' || e.key == 'ArrowLeft') {
+    } else if (e.key === 'Left' || e.key == 'ArrowLeft') {
         leftPressed = true;
     }
 }
@@ -74,13 +75,13 @@ function renderObjectsOnCanvas() {
                 // draw brick if status == 1
                 bricks[c][r].drawBrick(ctx);
                 // detect collision of ball during drawing!
-                bricks[c][r].detectCollision(ball1)
+                bricks[c][r].detectCollision(ball1);
             }
         }
     }
     // update paddle position
-    paddle.drawPaddle(canvas, ctx, leftPressed, rightPressed)
+    paddle.drawPaddle(canvas, ctx, leftPressed, rightPressed);
     // confirm loss state
-    ball1.determineLoss(canvas, paddle)
+    ball1.determineLoss(canvas, paddle);
 }
 setInterval(renderObjectsOnCanvas, 10);
